@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">She</string>
+    <string name="login_Text">Login</string>
+    <string name="Loginemail">Email</string>
+    <string name="Lpassword_label">Password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="loginBtn">Login</string>
+    <string name="L_sign_up">New here? SignUp</string>
+    <string name="signup_Text">SignUp</string>
+    <string name="username_label">User Name</string>
+    <string name="email">Email</string>
+    <string name="password_label">Password</string>
+    <string name="Cpassword_label">Confirm Password</string>
+    <string name="mobile">Mobile Number</string>
+    <string name="signup">SignUp</string>
+    <string name="a_h_a_acc_login">Already have an Account? Login</string>
+    <string name="She">She</string>
+    <string name="she_home">She</string>
+    <string name="title_activity_maps">Maps</string>
+    <string name="map">Map</string>
+    <string name="message">Message</string>
+    <string name="user">User</string>
+    <string name="safetytips">SafetyTips</string>
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="safety_tips">Safety Tips</string>
+    <string name="home_page">Home</string>
+    <string name="message_page">Message</string>
+    <string name="zoom_in">+</string>
+    <string name="zoom_out">-</string>
+    <string name="get_location">Get Location</string>
+    <string name="share_location">Share Location</string>
+    <string name="sos">SOS</string>
+    <string name="share_live_location">Share Live Location</string>
+    <string name="she">She</string>
+    <string name="show_password">Show Password</string>
+
+    <string name="safety_tips_heading">Women Safety Tips</string>
+    <string name="Women_safety_tips">
+        1. Always be aware of your surroundings.\n
+        2. Trust your instincts and leave situations that feel unsafe.\n
+        3. Keep emergency contacts saved on speed dial.\n
+        4. Share your live location with a trusted friend when traveling alone.\n
+        5. Avoid walking alone in deserted or poorly lit areas at night.\n
+        6. Carry a self-defense tool like pepper spray or a whistle.\n
+        7. Do not share personal information with strangers.\n
+        8. Always use verified and trusted cab services.\n
+        9. Lock your doors and windows properly at home.\n
+        10. Take self-defense classes to stay prepared.
+</string>
+
+
+    <string name="menu_icon_desc" />
+    <string name="menu_button_description">open menu\n</string>
+    <string name="find_nearest_police_station">Find Nearest Police Station</string>
+    <string name="find_nearest_police_station_text">Find Nearest Police Station</string>
+    <string name="police_station_details_will_appear_here">Police station details will appear here...</string>
+    <string name="emergency_contacts">Emergency Contacts</string>
+    <string name="no_contacts_found">No contacts found.</string>
+    <string name="send_sms">Send SMS</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="name">Name</string>
+    <string name="enter_your_message">Enter your message</string>
+
+    <string name="stop_sharing">Stop Sharing</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+    android:id="@+id/nav_emergency_contacts"
+    android:title="Emergency Contacts" />
+    <item
+        android:id="@+id/nav_police_station"
+        android:title="Police Stations" />
+    <item
+        android:id="@+id/nav_Safety_tips"
+        android:title="Safety Tips" />
+
+    <item
+        android:id="@+id/nav_dev"
+        android:title="Devloper Information" />
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Log Out"/>
+
+</menu>

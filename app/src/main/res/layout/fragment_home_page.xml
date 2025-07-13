@@ -1,0 +1,47 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".HomePage">
+
+    <!-- FrameLayout to hold other fragments or views -->
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_title"
+        android:layout_marginBottom="?attr/actionBarSize"
+        android:visibility="gone"
+        tools:ignore="NotSibling" />
+
+    <!-- SOS Button -->
+    <Button
+        android:id="@+id/btn_sos"
+        android:layout_width="216dp"
+        android:layout_height="149dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/sos_button"
+        android:backgroundTint="#F34E86"
+        android:text="@string/sos"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Progress Bar for loading -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:theme="@style/Widget.AppCompat.ProgressBar" />
+
+
+</RelativeLayout>

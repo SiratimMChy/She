@@ -1,0 +1,77 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <TextView
+        android:id="@+id/adminTitle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:text="Admin Panel"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@color/sos_color"
+        android:textColor="@color/black" />
+
+    <ImageView
+        android:id="@+id/adminImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/adminTitle"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/adminpanel"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/makeAdminBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/adminImage"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#00BCD4"
+        android:padding="12dp"
+        android:text="Make Admin"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/addPoliceStationBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/makeAdminBtn"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#00BCD4"
+        android:padding="12dp"
+        android:text="Add Police Station"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        tools:ignore="HardcodedText" />
+
+
+    <Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/addPoliceStationBtn"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#00BCD4"
+        android:padding="12dp"
+        android:text="Logout"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>
