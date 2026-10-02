@@ -110,14 +110,11 @@ public class Login extends AppCompatActivity {
                     Intent intent;
                     if (Boolean.TRUE.equals(isAdmin)) {
                         intent = new Intent(Login.this, AdminPanel.class);
-                        intent.putExtra("userName", name);
-                        intent.putExtra("userMobile", mobile);
-                        startActivity(intent);
                     } else {
                         intent = new Intent(Login.this, Drawer_menu.class);
-                        intent.putExtra("userName", name);
-                        intent.putExtra("userMobile", mobile);
                     }
+                    intent.putExtra("userName", name);
+                    intent.putExtra("userMobile", mobile);
 
                     startActivity(intent);
                     finish();

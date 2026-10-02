@@ -50,9 +50,14 @@ public class Blog extends Fragment {
 
     private class MyWebViewClient extends WebViewClient {
         @Override
+        public boolean shouldOverrideUrlLoading(WebView view, android.webkit.WebResourceRequest request) {
+            return false;
+        }
+
+        @SuppressWarnings("deprecation")
+        @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
+            return false;
         }
 
         @Override

@@ -120,11 +120,7 @@ public class Drawer_menu extends AppCompatActivity {
     public void loadFrag(Fragment fragment, boolean flag) {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        if (flag) {
-            ft.add(R.id.container, fragment);
-        } else {
-            ft.replace(R.id.container, fragment);
-        }
+        ft.replace(R.id.container, fragment);
         ft.commit();
     }
 

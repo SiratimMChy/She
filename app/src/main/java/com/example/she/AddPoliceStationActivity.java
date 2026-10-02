@@ -45,7 +45,7 @@ public class AddPoliceStationActivity extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AddPoliceStationActivity.this, AdminPanel.class));
+                finish();
             }
         });
         databaseReference = FirebaseDatabase.getInstance().getReference("PoliceStations");
@@ -72,19 +72,22 @@ public class AddPoliceStationActivity extends AppCompatActivity {
         String key = databaseReference.child(district).push().getKey();
         PoliceStation policeStation = new PoliceStation(stationName, area, contact);
 
-        assert key != null;
-        databaseReference.child(district).child(key).setValue(policeStation)
-                .addOnCompleteListener(task -> {
-                    progressBar.setVisibility(View.GONE);
-                    if (task.isSuccessful()) {
-                        Toast.makeText(AddPoliceStationActivity.this, "Police station added successfully!", Toast.LENGTH_SHORT).show();
-                        areaEditText.setText("");
-                        stationNameEditText.setText("");
-                        contactEditText.setText("");
-                    } else {
-                        Toast.makeText(AddPoliceStationActivity.this, "Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+        if (key != null) {
+            databaseReference.child(district).child(key).setValue(policeStation)
+                    .addOnCompleteListener(task -> {
+                        progressBar.setVisibility(View.GONE);
+                        if (task.isSuccessful()) {
+                            Toast.makeText(AddPoliceStationActivity.this, "Police station added successfully!", Toast.LENGTH_SHORT).show();
+                            areaEditText.setText("");
+                            stationNameEditText.setText("");
+                            contactEditText.setText("");
+                        } else {
+                            Toast.makeText(AddPoliceStationActivity.this, "Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        } else {
+            progressBar.setVisibility(View.GONE);
+        }
     }
 
     public static class PoliceStation {

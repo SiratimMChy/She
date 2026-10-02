@@ -36,7 +36,7 @@ public class MakeAdminActivity extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MakeAdminActivity.this, AdminPanel.class));
+                finish();
             }
         });
 

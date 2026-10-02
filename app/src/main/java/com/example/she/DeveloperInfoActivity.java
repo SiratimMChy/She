@@ -17,7 +17,7 @@ public class DeveloperInfoActivity extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DeveloperInfoActivity.this, Drawer_menu.class));
+                finish();
             }
         });
 

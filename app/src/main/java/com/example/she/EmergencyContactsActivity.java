@@ -69,7 +69,7 @@ public class EmergencyContactsActivity extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(EmergencyContactsActivity.this, Drawer_menu.class));
+                finish();
             }
         });
 
@@ -110,7 +110,6 @@ public class EmergencyContactsActivity extends AppCompatActivity {
             contactsRef.child(contactId).setValue(contact)
                     .addOnSuccessListener(aVoid -> {
                         Toast.makeText(this, "Contact saved successfully", Toast.LENGTH_SHORT).show();
-                        fetchContactsFromFirebase();
                     })
                     .addOnFailureListener(e -> Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show());
         }
@@ -216,7 +215,6 @@ public class EmergencyContactsActivity extends AppCompatActivity {
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference(EMERGENCY_CONTACTS_NODE).child(currentUserId).child(contact.getId());
                 reference.removeValue().addOnSuccessListener(aVoid -> {
                     Toast.makeText(EmergencyContactsActivity.this, "Contact deleted successfully", Toast.LENGTH_SHORT).show();
-                    fetchContactsFromFirebase();
                 });
             });
         }

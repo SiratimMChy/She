@@ -66,9 +66,9 @@ public class Message extends Fragment {
             requestPermissions(new String[]{Manifest.permission.SEND_SMS}, REQUEST_SEND_SMS_PERMISSION);
         }
 
-        String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        if (currentUserId != null) {
-            fetchContactsFromFirebase(currentUserId);
+        com.google.firebase.auth.FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            fetchContactsFromFirebase(currentUser.getUid());
         } else {
             Toast.makeText(requireContext(), "User not logged in", Toast.LENGTH_SHORT).show();
         }
@@ -125,7 +125,12 @@ public class Message extends Fragment {
         }
 
         try {
-            SmsManager smsManager = SmsManager.getDefault();
+            SmsManager smsManager;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+                smsManager = requireContext().getSystemService(SmsManager.class);
+            } else {
+                smsManager = SmsManager.getDefault();
+            }
             smsManager.sendTextMessage(phoneNumber, null, message, null, null);
             Toast.makeText(requireContext(), "SMS sent successfully!", Toast.LENGTH_SHORT).show();
             etMessage.setText(""); // Clear the EditText

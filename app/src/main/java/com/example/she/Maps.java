@@ -128,7 +128,7 @@ public class Maps extends Fragment implements OnMapReadyCallback {
     }
 
     private void requestLocationPermission() {
-        ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
+        requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
     }
 
     private void enableUserLocation() {
@@ -191,6 +191,14 @@ public class Maps extends Fragment implements OnMapReadyCallback {
         shareIntent.putExtra(Intent.EXTRA_TEXT, "User ID: "+ userID +"  Track my live location here: " + "https://razz-62.github.io/web__map/");
 
         startActivity(Intent.createChooser(shareIntent, "Share via"));
+    }
+
+    @Override
+    public void onDestroyView() {
+        if (isSharingLocation) {
+            stopLocationUpdates();
+        }
+        super.onDestroyView();
     }
 
     @Override

@@ -27,6 +27,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
@@ -55,17 +56,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation ("com.google.android.material:material:1.9.0")
-    implementation ("com.google.android.gms:play-services-maps:18.1.0")
-    implementation ("com.google.android.gms:play-services-maps:18.0.2")
-    implementation ("com.google.android.gms:play-services-location:21.0.1")
 
     implementation ("com.google.android.libraries.places:places:3.2.0")
-
-    implementation("com.google.firebase:firebase-auth:22.1.2")
-    implementation("com.google.firebase:firebase-database:20.2.1")
-
-
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")

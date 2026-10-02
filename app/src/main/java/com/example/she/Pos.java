@@ -44,7 +44,7 @@ public class Pos extends AppCompatActivity {
         policeStationTextView = findViewById(R.id.policeStationTextView);
         ImageButton backbutton = findViewById(R.id.backButton);
 
-        backbutton.setOnClickListener(v -> startActivity(new Intent(Pos.this, Drawer_menu.class)));
+        backbutton.setOnClickListener(v -> finish());
 
         databaseReference = FirebaseDatabase.getInstance().getReference("PoliceStations");
         fetchPoliceStationsFromFirebase();
@@ -113,9 +113,11 @@ public class Pos extends AppCompatActivity {
         areaSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedArea = parent.getItemAtPosition(position).toString();
-                String selectedDistrict = districtSpinner.getSelectedItem().toString();
-                displayPoliceStationDetails(selectedDistrict, selectedArea);
+                Object item = parent.getItemAtPosition(position);
+                Object districtItem = districtSpinner.getSelectedItem();
+                if (item != null && districtItem != null) {
+                    displayPoliceStationDetails(districtItem.toString(), item.toString());
+                }
             }
 
             @Override
